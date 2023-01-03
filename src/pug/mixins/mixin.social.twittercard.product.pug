@@ -1,0 +1,22 @@
+mixin twittercard_product(options)
+  meta(name="twitter:card",content="product")
+  if options.site
+    meta(name="twitter:site", content= options.site)
+  if options.creator
+    meta(name="twitter:creator", content= options.creator)
+  if options.title
+    meta(name="twitter:title", content= options.title)
+  if options.image
+    meta(name="twitter:image", content= options.image)
+  if options.width
+    meta(name="twitter:image:width", content= options.width)
+  if options.height
+    meta(name="twitter:image:height", content= options.height)
+  if options.label1
+    meta(name="twitter:label1", content= options.label1)
+  if options.data1
+    meta(name="twitter:data1", content= options.data1)
+  if options.label2
+    meta(name="twitter:label2", content= options.label2)
+  if options.data2
+    meta(name="twitter:data2", content= options.data2)

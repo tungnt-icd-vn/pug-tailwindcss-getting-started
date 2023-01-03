@@ -1,0 +1,17 @@
+mixin twittercard_gallery(options)
+  meta(name="twitter:card",content="gallery")
+  if options.site
+    meta(name="twitter:site", content= options.site)
+  if options.creator
+    meta(name="twitter:creator", content= options.creator)
+  if options.title
+    meta(name="twitter:title", content= options.title)
+  if options.description
+    meta(name="twitter:description", content= options.description)
+  if options.url
+    meta(name="twitter:url", content= options.url)
+  if options.images.length > 0
+    -cnt = 0
+    each image in options.images
+      meta(name="twitter:image"+cnt.toString(), content= image)
+      - cnt++

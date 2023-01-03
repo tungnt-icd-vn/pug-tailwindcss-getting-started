@@ -1,6 +1,8 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const ESLintWebpackPlugin = require('eslint-webpack-plugin');
+
 module.exports = {
   devServer: {
     static: {
@@ -11,29 +13,30 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./index.pug",
-      favicon: "./favicon.ico",
+      template: './index.pug',
+      favicon: './favicon.ico',
     }),
     new MiniCssExtractPlugin(),
+    new ESLintWebpackPlugin(),
   ],
-  resolve:{
-    fallback:{
-      "fs": false,
-      "tls": false,
-      "net": false,
-      "path": false,
-      "zlib": false,
-      "http": false,
-      "https": false,
-      "stream": false,
-      "crypto": false,
-    }
+  resolve: {
+    fallback: {
+      fs: false,
+      tls: false,
+      net: false,
+      path: false,
+      zlib: false,
+      http: false,
+      https: false,
+      stream: false,
+      crypto: false,
+    },
   },
   module: {
     rules: [
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.css$/i,
@@ -44,7 +47,7 @@ module.exports = {
         test: /\.pug$/,
         use: [
           {
-            loader: "pug-loader",
+            loader: 'pug-loader',
           },
         ],
       },

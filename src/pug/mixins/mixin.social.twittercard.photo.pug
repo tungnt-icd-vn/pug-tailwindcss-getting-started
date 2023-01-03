@@ -1,0 +1,14 @@
+mixin twittercard_photo(options)
+  meta(name="twitter:card",content="photo")
+  if options.site
+    meta(name="twitter:site", content= options.site)
+  if options.title
+    meta(name="twitter:title", content= options.title)
+  if options.url
+    meta(name="twitter:url", content= options.url)
+  if options.image
+    meta(name="twitter:image", content= options.image)
+  if options.width
+    meta(name="twitter:image:width", content= options.width)
+  if options.height
+    meta(name="twitter:image:height", content= options.height)
